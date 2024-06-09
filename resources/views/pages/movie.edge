@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Movie</title>
+
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+  </head>
+  <body>
+    <h1>Movie</h1>
+    <p>Movie id : {{id}}</p>
+    {{--
+      When using triple curly brackets, it
+      will render a variable as a strin and will
+      escaoe all html character for security reason.
+    --}}
+    {{{header}}}
+  </body>
+</html>
