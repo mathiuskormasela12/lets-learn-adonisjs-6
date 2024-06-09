@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User</title>
+  </head>
+  <body>
+    <div>
+      <!--
+        route method is used to navigate between route in
+        Edge temokate.
+
+        Actually we can use normal url like "/user" or "/"
+        but on Adonis we're suggested to use route method instead
+        bcz if we use it, when we want to change the url we can just
+         change it on router and no need to chage url on edge template.
+      -->
+      <a href="{{ route('home.index') }}">Home</a>
+      <a href="{{ route('user.index') }}">User</a>
+    </div>
+    <h1>Hi {{name}}-chan</h1>
+  </body>
+</html>
