@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies</title>
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+  </head>
+  <body>
+    <h1>Movies</h1>
+    {{-- Looping list --}}
+    @each (movie in movies)
+      <p>{{movie.title}}</p>
+    @endeach
+  </body>
+</html>
