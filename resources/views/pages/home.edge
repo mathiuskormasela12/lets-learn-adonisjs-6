@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AdonisJS - A fully featured web framework for Node.js </title>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+  {{-- To include a template to make your code reusable --}}
+  @include ('partials/title')
+
+  {{-- To create a variable --}}
+  @let (name = 'Mathius')
+
+  @if (isGaeul)
+    {{-- ReAssign variable --}}
+    @assign (name = 'Mathius loves Gaeul forever')
+  @endif
+
+  <h2
+   {{-- To add dynamic class names --}}
+    class="{{
+      html.classNames([
+        'pink', // can use string
+        {
+          blue: isGaeul // or can use object like this
+        }
+      ])
+    }}"
+
+    {{-- To add attributes --}}
+    {{--
+        If we have defined class in the line 24,
+        we can't define it on below. We have to remove
+        the html.class above to make we're able to add class
+        below
+     --}}
+    {{
+      html.attrs({
+        name: 'Mathius loves Gaeul'
+      })
+    }}
+  >Hi {{name}}</h2>
+
+  {{-- Conditonal --}}
+  @if (favouriteFrameworks === 'Adonis')
+  {{-- To truncate text --}}
+    <p>{{truncate("It's an awesome Web Framework that written in Node Js", 20, {completeWords: true})}}</p>
+  @elseif (favouriteFrameworks === 'Nest')
+    <p>It's a great framework for building RESTful API</p>
+  @else
+    <p>Maybe just use Express js</p>
+  @endif
+
+  <p></p>
+</body>
+</html>
