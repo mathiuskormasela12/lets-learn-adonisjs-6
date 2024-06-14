@@ -1,0 +1,19 @@
+
+<h1
+  {{-- Read parameter using $props. Recommended to be used if the parameter name is javascript reserved keyword like class --}}
+  class="{{ $props.class }}"
+  {{-- Read paramater without $props --}}
+>Hi {{ name }}</h1>
+
+<p
+  {{-- Make the parameter to be html attribute --}}
+  {{ $props.toAttrs() }}
+>We love Adonis Js</p>
+
+
+<p
+  {{-- Make parameter to be html attributes except a specifif paramater. In this example we except class --}}
+  {{ $props.except('class').toAttrs() }}
+>
+  Nest Js is still good
+</p>
