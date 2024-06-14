@@ -11,5 +11,12 @@
 
     {{-- To create a component --}}
     @!component('components/title', {name: 'Adonis Js', class: 'red'})
+
+    {{--
+         Because We put our title component into
+         views/components directory. AdonisJs will transform it
+         to the component automatically. So we can use it as component tag
+    --}}
+    @!subtitle({class: 'text-center'})
   </body>
 </html>
