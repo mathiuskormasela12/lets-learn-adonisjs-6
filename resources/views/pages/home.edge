@@ -1,0 +1,12 @@
+@layout()
+{{-- To use mete on page --}}
+  @slot('meta')
+    <title>{{ title }}</title>
+  @endslot
+  <h1> It Works! </h1>
+
+  {{-- To create a comnponent child --}}
+  @button({type: "submit"})
+    Click Me
+  @end
+@end

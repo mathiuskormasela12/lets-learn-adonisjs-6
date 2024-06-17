@@ -1,0 +1,4 @@
+<button type="{{type}}">
+  {{-- To defined children. it should be an async function --}}
+  {{ await $slots.main({ type: "submit" }) }} {{ year }}
+</button>
