@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AdonisJS - A fully featured web framework for Node.js </title>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+  <h1> It Works! </h1>
+  {{--
+    By default html Form only support method POST & GET, but if our route destination
+    is DELETE or PUT or PATCH method we should pass _method: 'METHOD NAME FOR EXAMPLE DELETE' to the query string.
+    But need to turn the methodSpoofing on in file config/app.ts by changing the value of
+    allowMethodSpoofing property to true.
+    Below is the example
+  --}}
+  <form method="POST" action="{{ route('test.del', {}, { qs: { _method: 'DELETE' } }) }}">
+    {{--
+      By Default Adonis Js will protect our form submisson, so if there is an unkwon user
+      that submit the form, the user will be redirected to previous page before the
+      route destination is called.
+
+      But it will make we can't submit form, to allow submit form, we have to call
+      csrfField function to create a hidden input text that will be filled by the csrf token.
+    --}}
+    {{ csrfField() }}
+    @button({ type: "submit" })
+      Click Ok
+    @endbutton
+  </form>
+</body>
+</html>
