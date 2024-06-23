@@ -27,8 +27,15 @@
     --}}
     {{ csrfField() }}
     @button({ type: "submit" })
-      Click Ok
+      {{-- Using iconify. using this way we can put the text "Click Ok" beside the svg function. but with second way you can't --}}
+      {{ svg('ph:trash-fill', { class: 'my-class' }) }} Click Ok
     @endbutton
+
+    @button({ type: "submit" })
+      {{-- Using iconify. (Second way) using this  we have to put the "Click Yes" text below the @svg to avoid error --}}
+      @svg('ph:trash-fill', { class: 'my-class' })
+      Click Yes
+    @end
   </form>
 </body>
 </html>
